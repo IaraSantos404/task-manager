@@ -2,9 +2,13 @@ from passlib.context import CryptContext
 from datetime import datetime, timedelta, timezone
 from jose import jwt, JWTError
 from fastapi import HTTPException, status
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 #isso vai pro env depois
-SECRET_KEY = "chave-super-secreta"
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
