@@ -6,7 +6,7 @@ type PrivateLayoutProps = {
   theme?: string | null
 }
 
-export default function PrivateLayout({theme = 'light'}: PrivateLayoutProps){
+export default function PrivateLayout({theme = 'dark'}: PrivateLayoutProps){
   return(
     <section className={`flex ${theme}`} >
       <Aside />
