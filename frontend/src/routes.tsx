@@ -24,6 +24,8 @@ export default function AppRoutes(){
             <PrivateLayout />
           </ProtectedRoute>}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/pendentes" element={<Dashboard />} />
+          <Route path="/concluidas" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

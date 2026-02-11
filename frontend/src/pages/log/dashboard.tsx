@@ -3,7 +3,7 @@ export default function Dashboard() {
   return (
     <>
       <section>
-        <p>Dashboard</p>
+        {/* <p>Dashboard</p> */}
       </section>
     </>
   )
