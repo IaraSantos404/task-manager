@@ -1,15 +1,23 @@
 //rotas logadas
 import { Outlet } from "react-router-dom"
 import Aside from "../components/aside"
+import { useState, useEffect } from "react"
 
-type PrivateLayoutProps = {
-  theme?: string | null
-}
+export default function PrivateLayout() {
+  const [theme, setTheme] = useState<"dark" | "light">("dark")
 
-export default function PrivateLayout({theme = 'dark'}: PrivateLayoutProps){
-  return(
-    <section className={`flex ${theme}`} >
-      <Aside />
+  useEffect(() => {
+    const root = document.documentElement
+
+    if (theme === "light") {
+      root.classList.add("light")
+    } else {
+      root.classList.remove("light")
+    }
+  }, [theme])
+  return (
+    <section className={`flex text-text bg-background ${theme}`} >
+      <Aside theme={theme} setTheme={setTheme} />
       <main>
         <Outlet />
       </main>

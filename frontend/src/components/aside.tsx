@@ -9,10 +9,19 @@ import { IoIosLogOut } from "react-icons/io";
 
 import { NavLink } from "react-router-dom";
 
-export default function Aside() {
+type AsideProps = {
+  theme: "dark" | "light"
+  setTheme: React.Dispatch<React.SetStateAction<"dark" | "light">>
+}
 
-  const tema = "Escuro";
+export default function Aside({ theme, setTheme }: AsideProps) {
+
+  const tema = theme === "dark" ? "Escuro" : "Claro";
   const cssActive = "bg-primary-300";
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === "dark" ? "light" : "dark"))
+  }
 
   const menu = [
     { name: "Dashboard", icon: <MdOutlineDashboard />, link: "/dashboard" },
@@ -40,8 +49,8 @@ export default function Aside() {
           <div className="px-2.5">
             <h1 className="my-5">Menu</h1>
             {menu.map((item) => (
-              <NavLink key={item.name} to={item.link} className={({ isActive }) => 
-              `flex flex-col mb-2 items-center w-full p-3 rounded-lg cursor-pointer hover:bg-primary-300 transition-colors duration-300 ${isActive ? cssActive : ""}`}>
+              <NavLink key={item.name} to={item.link} className={({ isActive }) =>
+                `flex flex-col mb-2 items-center w-full p-3 rounded-lg cursor-pointer hover:bg-primary-300 transition-colors duration-300 ${isActive ? cssActive : ""}`}>
                 <ul className="flex gap-2 items-center w-full">
                   <span className="text-2xl">{item.icon}</span>
                   <li>{item.name}</li>
@@ -68,7 +77,8 @@ export default function Aside() {
           </div>
 
           <div className="">
-            <div className="flex items-center gap-2 p-3 mx-2 rounded-lg hover:bg-primary-300 cursor-pointer transition-all duration-300">
+            <div className="flex items-center gap-2 p-3 mx-2 rounded-lg hover:bg-primary-300 cursor-pointer transition-all duration-300"
+              onClick={toggleTheme}>
               <RiMoonLine className="text-2xl " />
               <p>Modo {tema}</p>
             </div>

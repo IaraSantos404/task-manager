@@ -4,8 +4,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
 input:focus {
@@ -19,13 +17,13 @@ input:focus {
   --background-color: #000016;
   --text-color: #ced7e0;
 
-  --primary-color-light: #2B6CB0;
-  --secondary-color-light: #3182CE;
-  --background-color-light: #F7FAFC;
-  --text-color-light: #2D3748;
+  --primary-color-light: #1E4E8C;
+  --secondary-color-light: #E6EEF8;
+  --background-color-light: #F4F7FB;
+  --text-color-light: #1A202C;
 }
 
-/* light mode styles */
+/* dark mode styles */
 @theme {
   --color-primary: var(--primary-color);
   --color-secondary: var(--secondary-color);
@@ -49,6 +47,7 @@ input:focus {
     0 0 18px rgba(59, 130, 246, 0.45);
   transition: all 300ms ease;
 }
+
 .glow-primary:hover {
   box-shadow:
     0 6px 14px rgba(2, 20, 60, 0.5),
