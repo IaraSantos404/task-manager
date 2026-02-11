@@ -19,5 +19,9 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    "rules": {
+      "@theme-ui/rules/typography": "off",
+      "Unknown at rule @theme": "off"
+    }
   },
 ])
