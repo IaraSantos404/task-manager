@@ -21,9 +21,9 @@ export default function Header({ user }: HeaderProps) {
   const ano = hoje.getFullYear();
 
   return (
-    <header className="flex flex-col p-8">
+    <header className="flex flex-col">
       <h1 className="font-bold text-4xl">Bom dia, {user}</h1>
-      <p className="text-gray-400">{`${semanas[hoje.getDay()]}, ${dia} de ${meses[mes]} de ${ano}`}</p>
+      <p className="text-text mt-1">{`${semanas[hoje.getDay()]}, ${dia} de ${meses[mes]} de ${ano}`}</p>
     </header>
   )
 }

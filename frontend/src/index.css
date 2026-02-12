@@ -8,6 +8,7 @@ body {
 
 input:focus {
   outline: none;
+   --text-color: #01a807;
 }
 
 
