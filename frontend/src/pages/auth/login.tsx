@@ -7,7 +7,7 @@ export default function Login() {
   const navigate = useNavigate();
   return (
     <>
-      <section className="flex flex-col justify-center items-center h-screen scroll-smooth">
+      <section className="flex flex-col justify-center items-center h-screen scroll-smooth text-text">
         <Head active="login" />
 
         <div className="card p-10 mt-5 bg-secondary rounded-[14px] border-primary border glow-primary">

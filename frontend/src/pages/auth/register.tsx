@@ -8,7 +8,7 @@ export default function Register() {
   const navigate = useNavigate();
   return (
     <>
-      <section className="flex flex-col justify-center items-center h-screen">
+      <section className="flex flex-col justify-center items-center h-screen text-text">
         <Head active="signup" />
         <div className="card p-10 mt-5 bg-secondary rounded-[14px] border-primary border glow-primary">
           {/* Colocar o  icon depois */}
