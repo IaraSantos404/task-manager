@@ -1,6 +1,6 @@
 import { BiTask } from "react-icons/bi";
 import { MdOutlineDashboard } from "react-icons/md";
-import { MdPendingActions } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
 import { BsBook } from "react-icons/bs";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { IoPersonOutline } from "react-icons/io5";
@@ -25,8 +25,8 @@ export default function Aside({ theme, setTheme }: AsideProps) {
 
   const menu = [
     { name: "Dashboard", icon: <MdOutlineDashboard />, link: "/dashboard" },
-    { name: "Pendentes", icon: <MdPendingActions />, link: "/pendentes" },
-    { name: "Concluídas", icon: <BiTask />, link: "/concluidas" },
+    { name: "Minhas tarefas", icon: <BiTask />, link: "/tasks" },
+    { name: "Configurações", icon: <IoSettingsOutline />, link: "/settings" },
   ]
 
   const categories = [

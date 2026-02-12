@@ -23,9 +23,9 @@ export default function AppRoutes(){
           <ProtectedRoute>
             <PrivateLayout />
           </ProtectedRoute>}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/pendentes" element={<Dashboard />} />
-          <Route path="/concluidas" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/tasks" element={<Dashboard />} />
+            <Route path="/settings" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
