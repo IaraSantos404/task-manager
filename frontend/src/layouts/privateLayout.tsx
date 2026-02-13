@@ -16,9 +16,9 @@ export default function PrivateLayout() {
     }
   }, [theme])
   return (
-    <section className={`flex text-text bg-background ${theme}`} >
+    <section className={`min-h-screen text-text bg-background ${theme}`} >
       <Aside theme={theme} setTheme={setTheme} />
-      <main className="flex-1">
+      <main className="ml-64">
         <Outlet />
       </main>
     </section>

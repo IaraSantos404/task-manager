@@ -15,7 +15,6 @@ type AsideProps = {
 }
 
 export default function Aside({ theme, setTheme }: AsideProps) {
-
   const tema = theme === "dark" ? "Escuro" : "Claro";
   const cssActive = "bg-primary-300";
 
@@ -36,8 +35,8 @@ export default function Aside({ theme, setTheme }: AsideProps) {
   ]
   return (
     <>
-      <aside className="bg-secondary w-62.5 h-screen">
-        <div className="flex  items-center gap-2 border-r border-b border-gray-800 p-5">
+      <aside className="bg-secondary w-64 h-screen fixed inset-y-0 left-0 overflow-y-auto border-r border-gray-800">
+        <div className="flex  items-center gap-2 border-b border-gray-800 p-5">
           {/* logo aqui */}
           <div className="bg-primary-300 rounded-lg p-1">
             <BiTask className="text-gray-300 text-3xl" />
@@ -45,7 +44,7 @@ export default function Aside({ theme, setTheme }: AsideProps) {
           <h1>TaskFlow</h1>
         </div>
 
-        <div className="flex flex-col justify-center gap-2 border-r border-gray-800">
+        <div className="flex flex-col justify-center gap-2 border-gray-800">
           <div className="px-2.5">
             <h1 className="my-5">Menu</h1>
             {menu.map((item) => (
