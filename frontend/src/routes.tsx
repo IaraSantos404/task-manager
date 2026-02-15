@@ -5,6 +5,7 @@ import AuthLayout from "./layouts/authLayout";
 import ProtectedRoute from "./layouts/protectedRoute";
 import Register from "./pages/auth/register";
 import Login from "./pages/auth/login";
+import Tasks from "./pages/log/tasks";
 
 
 export default function AppRoutes(){
@@ -24,7 +25,7 @@ export default function AppRoutes(){
             <PrivateLayout />
           </ProtectedRoute>}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/tasks" element={<Dashboard />} />
+            <Route path="/tasks" element={<Tasks />} />
             <Route path="/settings" element={<Dashboard />} />
         </Route>
       </Routes>

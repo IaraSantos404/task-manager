@@ -24,7 +24,7 @@ export default function Dashboard() {
 
   ]
 
-  const tasks =[
+  const tasks = [
     {
       title: "Estudar React",
       description: "Revisar os conceitos básicos e avançados de React para aprimorar minhas habilidades de desenvolvimento.",
@@ -41,7 +41,7 @@ export default function Dashboard() {
   return (
     <>
       <section className="p-8 w-full">
-        <Header user="João" />
+        <Header user="Iara" />
         <div className="cards-container flex flex-wrap lg:flex-nowrap justify-between gap-2 w-full mt-8">
           {cards.map((card) => (
             <div key={card.nome} className="card bg-secondary text-text p-6 rounded-lg lg:w-1/4 w-full flex gap-4 items-center border border-gray-800">
@@ -52,10 +52,17 @@ export default function Dashboard() {
               </div>
             </div>
           ))}
-
         </div>
 
-        <TasksDashboard name="Tarefas de hoje" tasks={tasks} />
+        <div className="my-12 lg:w-1/2 w-full">
+          <div className="flex justify-between mb-4">
+            <li className="text-text">Tarefas de hoje</li>
+            <p className="text-text">{tasks.length} tarefa{tasks.length > 1 ? "s" : ""}</p>
+          </div>
+
+          <TasksDashboard tasks={tasks} />
+        </div>
+
 
       </section>
     </>

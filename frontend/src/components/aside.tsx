@@ -35,7 +35,7 @@ export default function Aside({ theme, setTheme }: AsideProps) {
   ]
   return (
     <>
-      <aside className="bg-secondary w-64 h-screen fixed inset-y-0 left-0 overflow-y-auto border-r border-gray-800">
+      <aside className="bg-secondary w-64 h-screen fixed inset-y-0 left-0 overflow-y-hidden border-r border-gray-800 ">
         <div className="flex  items-center gap-2 border-b border-gray-800 p-5">
           {/* logo aqui */}
           <div className="bg-primary-300 rounded-lg p-1">
