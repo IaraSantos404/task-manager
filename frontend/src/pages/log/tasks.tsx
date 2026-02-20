@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa6";
 
 import NotTaskFound from "./components/notTaskFound";
 import TasksDashboard from "./components/tasksDashboard";
+import NewTask from "./components/newTask";
 
 export default function Tasks() {
+  const [isNewTaskOpen, setIsNewTaskOpen] = useState(false);
   const tasks = [
     {
       title: "Estudar React",
@@ -26,7 +29,10 @@ export default function Tasks() {
           <h1 className="font-bold text-4xl">Minhas Tarefas</h1>
           <p className="text-text mt-1 ">{tasks.length} tarefa{tasks.length > 1 ? "s" : ""} no total</p>
         </div>
-        <button className="bg-primary text-[#ced7e0] py-2.5 px-4 rounded-lg cursor-pointer hover:bg-primary-300 transition-color duration-300 flex items-center gap-2">
+        <button
+          onClick={() => setIsNewTaskOpen(true)}
+          className="bg-primary text-[#ced7e0] py-2.5 px-4 rounded-lg cursor-pointer hover:bg-primary-300 transition-color duration-300 flex items-center gap-2"
+        >
           <FaPlus />
           Nova Tarefa
         </button>
@@ -48,6 +54,16 @@ export default function Tasks() {
           </select>
         </div>
 
+         {/* filtro de categorias */}
+        <div className="flex flex-1 ">
+          <select className="p-2.5 text-text bg-background rounded-[14px] border border-gray-800 cursor-pointer w-full">
+            <option value="">Todas</option>
+            <option value="estudo">Estudo</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="pessoal">Pessoal</option>
+          </select>
+        </div>
+
         {/* ordenação */}
         <div className="flex flex-1 w-full">
           <select className="p-2.5 text-text bg-background rounded-[14px] border border-gray-800 cursor-pointer w-full">
@@ -60,7 +76,11 @@ export default function Tasks() {
 
       {tasks.length === 0 ? (
         <NotTaskFound />
-      ) : <TasksDashboard tasks={tasks} />}
+      ) : (
+        <TasksDashboard tasks={tasks} />
+      )}
+
+      <NewTask isOpen={isNewTaskOpen} onClose={() => setIsNewTaskOpen(false)} />
 
     </section >
   )
